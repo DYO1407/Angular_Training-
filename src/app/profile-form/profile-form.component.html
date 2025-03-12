@@ -19,6 +19,11 @@
       <label for="phone" >Phone</label>
       <input formControlName="phone" type="tel" id="phone" placeholder="Enter your phone number" >
 
+      <div formArrayName="skills">
+      <label for="skills" > Skills </label>
+      <input  type="text" id="skills" *ngFor="let skill of skills.controls; let i=index" [formControlName]="i" placeholder="Enter a skill" >
+      
+      </div>
 
 
       <button type="submit">Submit</button>
