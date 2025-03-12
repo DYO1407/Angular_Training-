@@ -1,0 +1,18 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div  id="formblock" formArrayName="forms"  >
+    <div *ngFor="let formGroup of forms.controls; let i = index" [formGroupName]="i">
+      <label for="id"></label>
+      <span  id="id"  style="width:10ch;">[ {{ i }} ]</span>
+      <label for="firstName"> First Name: </label>
+      <input id="firstName" formControlName="firstName" placeholder="First Name" />
+      <label for="lastName"> Last Name: </label>
+      <input id="lastName" formControlName="lastName" placeholder="Last Name" />
+      <label for="email"> Email: </label>
+      <input id="email" formControlName="email" placeholder="Email" />
+      <button type="button" (click)="duplicateForm(i)">Duplicate Form</button>
+      <button type="button" (click)="deleteForm(i)">Delete</button>
+    </div>
+  </div>
+  <button type="button" (click)="addForm()">Add Form at Beginning</button>
+  <button type="submit" [disabled]="!myForm.valid">Submit</button>
+</form>

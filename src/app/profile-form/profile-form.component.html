@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Form</title>
+
+</head>
+<body>
+  <div class="profile-form" >
+    <h2>Profile Form</h2>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+      <label for="firstName" >First Name</label>
+      <input formControlName="firstName" type="text" id="firstName" placeholder="Enter your first name" >
+
+      <label for="lastName" >Last Name</label>
+      <input formControlName="lastName" type="text" id="lastName" placeholder="Enter your last name" >
+
+      <label for="phone" >Phone</label>
+      <input formControlName="phone" type="tel" id="phone" placeholder="Enter your phone number" >
+
+
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

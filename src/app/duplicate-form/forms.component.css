@@ -1,0 +1,22 @@
+#email, #firstName, #lastName {
+    width: auto;
+    padding: 10pxn d0i;
+
+
+
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#forblock
+{
+
+    margin:50 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color:blue;
+    border-radius: 50px;
+    box-shadow: 0 0 5px #ccc;
+    display: inline-block;
+
+}

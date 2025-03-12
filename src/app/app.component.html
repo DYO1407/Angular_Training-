@@ -1,0 +1,81 @@
+<!-- <div *ngIf="doWeHaveAnyCourses() == true then coursesList else NoCourses" ></div>
+
+<ng-template #coursesList >
+  The List of Courses.
+
+  <ul *ngFor="let course of courses">
+    <li>
+      {{course}}
+    </li>
+  </ul>
+
+</ng-template>
+
+
+<ng-template #NoCourses>
+  No Courses yet
+</ng-template> -->
+<!--
+<div [hidden]="doWeHaveAnyCourses() == false">
+  List of Courses !
+
+  <ul *ngFor="let course of courses">
+    <li>
+      {{ course }}
+    </li>
+  </ul>
+</div>
+
+<div [hidden]="doWeHaveAnyCourses() == true">No Courses Yet.</div> -->
+
+
+
+<!-- <ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="viewModeCase == 'map'" href="#" (click)="viewModeCase = 'map'">
+      Map View</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="viewModeCase == 'list'" href="#" (click)="viewModeCase = 'list'">
+      List View</a>
+  </li>
+</ul>
+
+<div [ngSwitch]="viewModeCase">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">List View Content</div>
+  <div *ngSwitchDefault>Otherwise</div>
+</div> -->
+
+
+<!-- <p *ngIf="!isLoggedIn"> Welcome User !!</p>
+
+<button class="btn btn-secondary" (click)="onAdd()" >Add</button>
+<ul>
+<li *ngFor="let course of courses;">{{course.name}} <button class="btn btn-warning" (click)="onRemove(course)">Remove</button></li>
+
+</ul> -->
+
+<!-- <button class="btn"[class.active] = "status == 'active'" (click)="changeStatus()"> ChangeStatus</button>
+
+<div [ngSwitch]="status">
+  <p *ngSwitchCase="'active'">Active</p>
+  <p *ngSwitchCase="'inactive'">Inactive</p>
+  <p *ngSwitchDefault>Unknown</p>
+</div> -->
+
+<!-- <div [ngStyle]="{
+  'background-color': bgColor,
+  'font-size': fontSize + 'px'
+}">
+  Styled Box
+</div>
+
+<button (click)="increaseSize()">Increase Font</button>
+<button (click)="toggleBackground()">Toggle Background</button> -->
+
+<!-- <courses></courses> -->
+<!-- <login-form> </login-form> -->
+ <!-- <form-array></form-array> -->
+<!-- <profile-form></profile-form> -->
+ <duplicate-form></duplicate-form>
