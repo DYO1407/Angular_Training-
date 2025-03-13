@@ -1,1 +1,19 @@
-
+<div class="container">
+  <h2>Courses</h2>
+  <ul class="course-list">
+    <li *ngFor="let course of allCourses; let i = index" class="course-item">
+      <span class="course-index">Index: {{ i }}</span>
+      <span class="course-name">{{ course.name }}</span>
+      <button (click)="duplicateCourse(course,i)" class="btn btn-secondary">Duplicate</button>
+      <span class="course-id"><strong>ID:</strong> {{ course.id }}</span>
+    </li>
+  </ul>
+  <div class="form-group">
+    <input name="coursename" type="text" [(ngModel)]="courseName" class="form-control" placeholder="Enter course name">
+    <button (click)="addCourse()" class="btn btn-primary">Add Course</button>
+  </div>
+  <form name="form" (ngSubmit)="onSubmit()" class="email-form">
+    <input type="email" name="email" [(ngModel)]="email" (keyup.enter)="onKeyUp()" class="form-control" placeholder="Enter your email">
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
