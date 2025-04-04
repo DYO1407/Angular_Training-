@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <!-- Master Checkbox -->
+  <label>
+    <input type="checkbox" [checked]="selectAll" (change)="toggleAll()" />
+    Select All
+    </label>
+
+  <div formArrayName="contacts">
+    <div
+      *ngFor="let contact of contacts.controls; let i = index"
+      [formGroupName]="i"
+      style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;"
+    >
+      <!-- Row Checkbox -->
+      <input type="checkbox" formControlName="selected" />
+
+      <label style="display: flex; flex-direction: column;">
+        Name
+        <input formControlName="name" />
+      </label>
+
+      <label style="display: flex; flex-direction: column;">
+        Email
+        <input formControlName="email" />
+      </label>
+
+      <button type="button" (click)="removeContact(i)">Remove</button>
+    </div>
+  </div>
+
+  <button type="button" (click)="addContact()">Add Contact</button>
+  <button type="submit">Submit</button>
+</form>
