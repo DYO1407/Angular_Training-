@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div formArrayName="parents">
+    <div *ngFor="let parent of parents.controls; let pIndex = index" [formGroupName]="pIndex">
+      <!-- Parent Checkbox -->
+      <label>
+        <input type="checkbox" formControlName="selected" (change)="toggleSelectAll(pIndex)" />
+        Parent {{ pIndex + 1 }}
+      </label>
+
+      <!-- Remove Parent Button -->
+      <button type="button" (click)="removeParent(pIndex)" class="btn-danger">Remove Parent</button>
+
+      <!-- Children -->
+      <div formArrayName="children">
+        <div *ngFor="let child of children(pIndex).controls; let cIndex = index" [formGroupName]="cIndex">
+          <!-- Child Checkbox -->
+          <input type="checkbox" formControlName="selected" />
+
+          <!-- Child Fields -->
+          <label>Id:
+            <input formControlName="id" />
+          </label>
+
+          <label>Name:
+            <input formControlName="name" />
+          </label>
+
+          <label>Email:
+            <input formControlName="email" />
+          </label>
+
+          <!-- Remove Child Button -->
+          <button type="button" (click)="removeChild(pIndex, cIndex)" class="btn-warning">Remove Child</button>
+        </div>
+
+        <button type="button" (click)="addChild(pIndex)">Add Child</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" (click)="duplicateParent()" class="duplicate-parent">Duplicate Parent</button>
+  <button type="button" (click)="addParent()" class="add-parent">Add Parent</button>
+  <button type="submit">Submit</button>
+</form>
