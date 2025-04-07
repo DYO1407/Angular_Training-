@@ -1,5 +1,12 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div formArrayName="parents">
+
+    <div>
+      <label>
+        <input type="checkbox" [(ngModel)]="syncDisabled" />
+        Disable child sync between original and duplicate
+      </label>
+    </div>
     <div *ngFor="let parent of parents.controls; let pIndex = index" [formGroupName]="pIndex">
       <!-- Parent Checkbox -->
       <label>

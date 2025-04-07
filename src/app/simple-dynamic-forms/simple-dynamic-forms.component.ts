@@ -29,13 +29,18 @@ export class SimpleDynamicFormsComponent {
   }
 
   newChild(): FormGroup {
-    return this.fb.group({
+
+    const child = this.fb.group({
       selected: [false],
       id: [{value: this.generateId(),disabled: true}],
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
     });
+
+    return child;
   }
+
+
 
   counter = 1; // Initialize counter outside of the function
   generateId(): any {
@@ -81,6 +86,9 @@ export class SimpleDynamicFormsComponent {
 
 // Push the newly created duplicatedParent FormGroup into the parents FormArray.
 
+syncDisabled: boolean = false; // true = syncing is disabled
+
+
   duplicateParent(): void {
     const parentToDuplicate = this.getTheParent();
 
@@ -99,6 +107,21 @@ export class SimpleDynamicFormsComponent {
     });
 
     this.parents.push(duplicatedParent);
+
+
+    const originalChildren = this.children(0);
+    const duplicateChildren = this.children(1);
+
+    originalChildren.controls.forEach((child, i) => {
+      child.get('selected')?.valueChanges.subscribe(value => {
+        if (!this.syncDisabled) { // only sync if disabled == false
+          duplicateChildren.at(i).get('selected')?.setValue(value, { emitEvent: false });
+        }
+      });
+    });
+
+
+
   }
 
   removeParent(index: number): void {
@@ -139,6 +162,10 @@ updateParentCheckboxState(parent: FormGroup): void {
   parent.get('selected')?.setValue(allSelected, { emitEvent: false }); // Update parent checkbox without emitting an event
 }
 
+
+updateChildCheckboxState(parent: FormGroup): void {
+
+}
 
 
 
