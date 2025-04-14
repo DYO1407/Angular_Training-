@@ -11,6 +11,8 @@ import { FormsComponent } from './duplicate-form/forms.component';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { SimpleDynamicFormsComponent } from './simple-dynamic-forms/simple-dynamic-forms.component';
+import { DynamicFormGroupComponent } from './shared/dynamic-form-group/dynamic-form-group.component';
+import { DynamicFormHostComponent } from './pages/dynamic-form-host/dynamic-form-host.component';
 
 // import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
@@ -24,6 +26,8 @@ import { SimpleDynamicFormsComponent } from './simple-dynamic-forms/simple-dynam
     ProfileFormComponent,
     DynamicFormComponent,
     SimpleDynamicFormsComponent,
+    DynamicFormGroupComponent,
+    DynamicFormHostComponent,
 
     // ReactiveFormComponent
   ],

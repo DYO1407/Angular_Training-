@@ -1,0 +1,13 @@
+<div class="form-container">
+  <h2>Dynamic Nested Form</h2>
+
+  <label>
+    <input type="checkbox" [(ngModel)]="syncEnabled" />
+    Enable sync between original and duplicate children
+  </label>
+
+  <app-dynamic-form-group
+    [syncEnabled]="syncEnabled"
+    (formChanged)="onFormChanged($event)">
+  </app-dynamic-form-group>
+</div>

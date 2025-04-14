@@ -1,0 +1,27 @@
+
+<form [formGroup]="form">
+  <div formArrayName="parents">
+    <div *ngFor="let parent of parents.controls; let pIndex = index" [formGroupName]="pIndex">
+      <label>
+        <input type="checkbox" formControlName="selected" (change)="toggleSelectAll(pIndex)" />
+        Parent {{ pIndex + 1 }}
+      </label>
+
+      <button type="button" (click)="removeParent(pIndex)">Remove Parent</button>
+
+      <div formArrayName="children">
+        <div *ngFor="let child of children(pIndex).controls; let cIndex = index" [formGroupName]="cIndex">
+          <input type="checkbox" formControlName="selected" />
+          <label>ID: <input formControlName="id" /></label>
+          <label>Name: <input formControlName="name" /></label>
+          <label>Email: <input formControlName="email" /></label>
+          <button type="button" (click)="removeChild(pIndex, cIndex)">Remove Child</button>
+        </div>
+        <button type="button" (click)="addChild(pIndex)">Add Child</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" (click)="duplicateParent()">Duplicate First Parent</button>
+  <button type="button" (click)="addParent()">Add New Parent</button>
+</form>

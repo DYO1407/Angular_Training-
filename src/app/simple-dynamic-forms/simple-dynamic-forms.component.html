@@ -3,7 +3,8 @@
 
     <div>
       <label>
-        <input type="checkbox" [(ngModel)]="syncDisabled" />
+        <input type="checkbox" [(ngModel)]="syncDisabled" (change)="toggleSyncDisabled()" />
+
         Disable child sync between original and duplicate
       </label>
     </div>
