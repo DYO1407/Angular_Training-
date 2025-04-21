@@ -1,0 +1,12 @@
+.property {
+  padding: 16px;
+  background: #f0f4f8;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.property h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: #2c3e50;
+}

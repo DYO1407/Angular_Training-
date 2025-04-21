@@ -1,0 +1,9 @@
+<div class="share">
+  <h3>Eigentümer: {{ share.ownerName }} ({{ share.sharePercentage }}%)</h3>
+
+  <app-mortgage
+    *ngFor="let mortgage of share.mortgages"
+    [mortgage]="mortgage"
+    [syncEnabled]="syncEnabled">
+  </app-mortgage>
+</div>

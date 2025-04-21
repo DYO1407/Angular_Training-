@@ -1,0 +1,14 @@
+<div class="property">
+  <h2>{{ property.type }} – {{ property.address }}</h2>
+
+  <label>
+    <input type="checkbox" [(ngModel)]="syncEnabled" />
+    Synchronisation aktivieren
+  </label>
+
+  <app-share
+    *ngFor="let share of property.shares"
+    [share]="share"
+    [syncEnabled]="syncEnabled">
+  </app-share>
+</div>

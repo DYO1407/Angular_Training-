@@ -13,6 +13,10 @@ import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { SimpleDynamicFormsComponent } from './simple-dynamic-forms/simple-dynamic-forms.component';
 import { DynamicFormGroupComponent } from './shared/dynamic-form-group/dynamic-form-group.component';
 import { DynamicFormHostComponent } from './pages/dynamic-form-host/dynamic-form-host.component';
+import { PropertyComponent } from './property/property.component';
+import { ShareComponent } from './share/share.component';
+import { MortgageComponent } from './mortgage/mortgage.component';
+import { CheckboxComponent } from './shared/check-box/check-box.component';
 
 // import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
@@ -28,6 +32,10 @@ import { DynamicFormHostComponent } from './pages/dynamic-form-host/dynamic-form
     SimpleDynamicFormsComponent,
     DynamicFormGroupComponent,
     DynamicFormHostComponent,
+    PropertyComponent,
+    ShareComponent,
+    MortgageComponent,
+    CheckboxComponent,
 
     // ReactiveFormComponent
   ],

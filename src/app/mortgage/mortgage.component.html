@@ -1,0 +1,12 @@
+<div class="mortgage">
+  <span>
+    Rang {{ mortgage.rank }} – {{ mortgage.belastung }} –
+    {{ mortgage.betrag | currency:'EUR':'symbol':'1.0-0' }}
+  </span>
+
+  <app-check-box
+    [(ngModel)]="mortgage.isSelectedForImport"
+    (valueChanged)="onCheckboxChange($event)">
+  </app-check-box>
+
+</div>
