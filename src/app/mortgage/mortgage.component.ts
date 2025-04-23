@@ -18,15 +18,8 @@ export class MortgageComponent implements OnInit {
 
 
   ngOnInit() {
-    this.localValue = this.mortgage.isSelectedForImport;
   }
 
-  // onCheckboxChanged(checked: boolean) {
-  //   this.localValue = checked;
-  //   if (this.syncEnabled) {
-  //     this.mortgage.isSelectedForImport = checked;
-  //   }
-  // }
 
 
  public onSelectedForImport(newValue: boolean) {

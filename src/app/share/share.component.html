@@ -1,6 +1,11 @@
 <div class="share">
   <h3>Eigentümer: {{ share.ownerName }} ({{ share.sharePercentage }}%)</h3>
 
+  <app-check-box
+  [(ngModel)]="selectAll"
+  (valueChanged)="toggleAll($event)">
+</app-check-box>
+
   <app-mortgage
     *ngFor="let mortgage of share.mortgages"
     [mortgage]="mortgage"

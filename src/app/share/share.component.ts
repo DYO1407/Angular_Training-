@@ -9,4 +9,20 @@ import { PropertyShare } from '../Models/property-share.model';
 export class ShareComponent {
   @Input() share!: PropertyShare;
   @Input() syncEnabled: boolean = true;
+
+  selectAll: boolean = false;
+
+
+
+
+  toggleAll(checked: boolean): void {
+    this.selectAll = checked;
+    this.share.mortgages.forEach(m => {
+      if (this.syncEnabled) {
+        m.isSelectedForImport = checked;
+      }
+
+    });
+  }
+
 }
