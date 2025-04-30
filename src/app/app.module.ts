@@ -17,6 +17,8 @@ import { PropertyComponent } from './property/property.component';
 import { ShareComponent } from './share/share.component';
 import { MortgageComponent } from './mortgage/mortgage.component';
 import { CheckboxComponent } from './shared/check-box/check-box.component';
+import { SelectallCheckboxComponent } from './selectall-checkbox/selectall-checkbox.component';
+import { ProfileformComponent } from './profileform/profileform.component';
 
 // import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
@@ -36,6 +38,8 @@ import { CheckboxComponent } from './shared/check-box/check-box.component';
     ShareComponent,
     MortgageComponent,
     CheckboxComponent,
+    SelectallCheckboxComponent,
+    ProfileformComponent,
 
     // ReactiveFormComponent
   ],

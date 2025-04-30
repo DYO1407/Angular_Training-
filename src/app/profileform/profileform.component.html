@@ -1,0 +1,22 @@
+<div [formGroup]="profileForm" class="profile-form-container">
+
+  <h2 class="form-title">Select Your Skills</h2>
+
+  <div class="select-all-wrapper">
+    <selectall-checkbox
+    [(isChecked)]="allSelected"
+    (isCheckedChange)="toggleAllSkills($event)">
+  </selectall-checkbox>
+  </div>
+
+  <div formArrayName="skills" class="skills-list">
+    <div *ngFor="let skill of Skills.controls; index as i" [formGroupName]="i" class="skill-item">
+      <label class="skill-label">
+        <input type="checkbox" formControlName="isSelected" class="skill-checkbox" />
+        <span class="skill-name">{{ skill.get('name')?.value }}</span>
+      </label>
+    </div>
+  </div>
+
+  <button type="submit" (click)="onSubmit()" class="submit-button">Submit</button>
+</div>
